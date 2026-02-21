@@ -14,10 +14,10 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 
 // Products 
-Route::get('/category/food-beverage', [ProductsController::class, 'foodBeverage']);
-Route::get('/category/beauty-health', [ProductsController::class, 'beautyHealth']);
-Route::get('/category/home-care', [ProductsController::class, 'homeCare']);
-Route::get('/category/baby-kid', [ProductsController::class, 'babyKid']);
+Route::get('/category/food', [ProductsController::class, 'food']);
+Route::get('/category/beauty', [ProductsController::class, 'beauty']);
+Route::get('/category/homeCare', [ProductsController::class, 'homeCare']);
+Route::get('/category/babyKid', [ProductsController::class, 'babyKid']);
 
 // User
 Route::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
