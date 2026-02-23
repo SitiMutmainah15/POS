@@ -5,10 +5,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\LevelController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Level
+Route::get('/level', [LevelController::class, 'index']);
 
 // Home
 Route::get('/home', [HomeController::class, 'index']);
