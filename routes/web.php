@@ -3,14 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//User
+Route::get('/user', [UserController::class, 'index']);
 
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index']);
@@ -28,7 +31,7 @@ Route::get('/category/homeCare', [ProductsController::class, 'homeCare']);
 Route::get('/category/babyKid', [ProductsController::class, 'babyKid']);
 
 // User
-Route::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
+//ute::get('/user/{id}/name/{name}', [UserController::class, 'profile']);
 
 // Penjualan
 Route::get('/sales', [SalesController::class, 'index']);

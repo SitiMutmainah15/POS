@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class userController extends Controller
+class UserController extends Controller
 {
-    public function profile($id, $name) {
-        return view('pos.user', ['id' => $id, 'name' => $name]);
+    public function index()
+    {
+        $data = [
+            'nama' => 'Pelanggan Pertama',
+        ];
+
+        UserModel::where('username', 'customer-1')->update($data); 
+
+        $user = UserModel::all(); 
+        return view('pos.user', ['data' => $user]);
     }
 }
