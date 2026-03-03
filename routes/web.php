@@ -12,9 +12,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//User
-Route::get('/user', [UserController::class, 'index']);
-
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index']);
 
@@ -35,3 +32,17 @@ Route::get('/category/babyKid', [ProductsController::class, 'babyKid']);
 
 // Penjualan
 Route::get('/sales', [SalesController::class, 'index']);
+
+// Daftar User
+Route::get('/user', [UserController::class, 'index']);
+
+// Tambah User
+Route::get('/user/tambah', [UserController::class, 'tambah']);
+Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
+
+//Ubah User
+Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
+Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
+
+//Hapus User
+Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
