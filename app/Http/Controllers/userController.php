@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = UserModel::all();
+        $user = UserModel::with('level')->get();
         return view('user', ['data' => $user]);
     }
 
@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function ubah($id)
     {
-        $user = UserMOdel::find($id);
+        $user = UserModel::find($id);
         return view('user_ubah', ['data' => $user]);
     }
 

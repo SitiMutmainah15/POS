@@ -1,9 +1,9 @@
 <body>
     <h1>Form Ubah Data User</h1>
 
-    <form method="post" action="{{ url('user/ubah_simpan/'.$data->user_id) }}">
-        @csrf
-        @method('PUT') <!-- memberitahu Laravel pakai PUT -->
+    <form action="{{ url('/user/ubah_simpan/' . $data->user_id) }}" method="POST">
+    @csrf
+    @method('PUT')
 
         <label>Username</label>
         <input type="text" name="username" value="{{ $data->username }}">

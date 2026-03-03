@@ -45,4 +45,4 @@ Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
 Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
 
 //Hapus User
-Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
+Route::delete('/user/hapus/{id}', [UserController::class, 'hapus']);
