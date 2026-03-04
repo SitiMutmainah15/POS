@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SalesController;
-use App\Http\Controllers\LevelController;
-use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\LevelController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BarangController;
 
 
 //Kategori
@@ -54,4 +56,25 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}/edit', [UserController::class, 'edit']); // menampilkan halaman form edit user
     Route::put('/{id}', [UserController::class, 'update']);   // menyimpan perubahan data user
     Route::delete('/{id}', [UserController::class, 'destroy']); // menghapus data user
+});
+
+
+Route::prefix('level')->group(function () {
+    Route::get('/', [LevelController::class, 'index']);
+    Route::post('/list', [LevelController::class, 'list']);
+});
+
+Route::prefix('kategori')->group(function () {
+    Route::get('/', [KategoriController::class, 'index']);
+    Route::post('/list', [KategoriController::class, 'list']);
+});
+
+Route::prefix('supplier')->group(function () {
+    Route::get('/', [SupplierController::class, 'index']);
+    Route::post('/list', [SupplierController::class, 'list']);
+});
+
+Route::prefix('barang')->group(function () {
+    Route::get('/', [BarangController::class, 'index']);
+    Route::post('/list', [BarangController::class, 'list']);
 });
